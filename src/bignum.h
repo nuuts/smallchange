@@ -1,6 +1,6 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2012 The Bitcoin developers
-// Copyright (c) 2011-2012 Litecoin Developers
+// Copyright (c) 2011-2012 SaruulCoin Developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 #ifndef BITCOIN_BIGNUM_H
@@ -199,10 +199,10 @@ public:
         unsigned char* p = pch + 4;
         bool fLeadingZeroes = true;
         unsigned char* pbegin = (unsigned char*)&n;
-        unsigned char* psrc = pbegin + sizeof(n);
-        while (psrc != pbegin)
+        unsigned char* pBTC = pbegin + sizeof(n);
+        while (pBTC != pbegin)
         {
-            unsigned char c = *(--psrc);
+            unsigned char c = *(--pBTC);
             if (fLeadingZeroes)
             {
                 if (c == 0)

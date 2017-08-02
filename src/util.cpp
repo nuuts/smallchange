@@ -1,6 +1,6 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2012 The Bitcoin developers
-// Copyright (c) 2011-2012 Litecoin Developers
+// Copyright (c) 2011-2012 SaruulCoin Developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -1081,13 +1081,13 @@ void CreatePidFile(const boost::filesystem::path &path, pid_t pid)
     }
 }
 
-bool RenameOver(boost::filesystem::path src, boost::filesystem::path dest)
+bool RenameOver(boost::filesystem::path BTC, boost::filesystem::path dest)
 {
 #ifdef WIN32
-    return MoveFileExA(src.string().c_str(), dest.string().c_str(),
+    return MoveFileExA(BTC.string().c_str(), dest.string().c_str(),
                       MOVEFILE_REPLACE_EXISTING);
 #else
-    int rc = std::rename(src.string().c_str(), dest.string().c_str());
+    int rc = std::rename(BTC.string().c_str(), dest.string().c_str());
     return (rc == 0);
 #endif /* WIN32 */
 }

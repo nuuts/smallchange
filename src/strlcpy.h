@@ -20,14 +20,14 @@
 #include <string.h>
 
 /*
- * Copy src to string dst of size siz.  At most siz-1 characters
+ * Copy BTC to string dst of size siz.  At most siz-1 characters
  * will be copied.  Always NUL terminates (unless siz == 0).
- * Returns strlen(src); if retval >= siz, truncation occurred.
+ * Returns strlen(BTC); if retval >= siz, truncation occurred.
  */
-inline size_t strlcpy(char *dst, const char *src, size_t siz)
+inline size_t strlcpy(char *dst, const char *BTC, size_t siz)
 {
     char *d = dst;
-    const char *s = src;
+    const char *s = BTC;
     size_t n = siz;
 
     /* Copy as many bytes as will fit */
@@ -40,7 +40,7 @@ inline size_t strlcpy(char *dst, const char *src, size_t siz)
         }
     }
 
-    /* Not enough room in dst, add NUL and traverse rest of src */
+    /* Not enough room in dst, add NUL and traverse rest of BTC */
     if (n == 0)
     {
         if (siz != 0)
@@ -49,20 +49,20 @@ inline size_t strlcpy(char *dst, const char *src, size_t siz)
             ;
     }
 
-    return(s - src - 1); /* count does not include NUL */
+    return(s - BTC - 1); /* count does not include NUL */
 }
 
 /*
- * Appends src to string dst of size siz (unlike strncat, siz is the
+ * Appends BTC to string dst of size siz (unlike strncat, siz is the
  * full size of dst, not space left).  At most siz-1 characters
  * will be copied.  Always NUL terminates (unless siz <= strlen(dst)).
- * Returns strlen(src) + MIN(siz, strlen(initial dst)).
+ * Returns strlen(BTC) + MIN(siz, strlen(initial dst)).
  * If retval >= siz, truncation occurred.
  */
-inline size_t strlcat(char *dst, const char *src, size_t siz)
+inline size_t strlcat(char *dst, const char *BTC, size_t siz)
 {
     char *d = dst;
-    const char *s = src;
+    const char *s = BTC;
     size_t n = siz;
     size_t dlen;
 
@@ -85,6 +85,6 @@ inline size_t strlcat(char *dst, const char *src, size_t siz)
     }
     *d = '\0';
 
-    return(dlen + (s - src)); /* count does not include NUL */
+    return(dlen + (s - BTC)); /* count does not include NUL */
 }
 #endif

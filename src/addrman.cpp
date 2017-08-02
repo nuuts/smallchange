@@ -20,11 +20,11 @@ int CAddrInfo::GetTriedBucket(const std::vector<unsigned char> &nKey) const
     return hash2 % ADDRMAN_TRIED_BUCKET_COUNT;
 }
 
-int CAddrInfo::GetNewBucket(const std::vector<unsigned char> &nKey, const CNetAddr& src) const
+int CAddrInfo::GetNewBucket(const std::vector<unsigned char> &nKey, const CNetAddr& BTC) const
 {
     CDataStream ss1(SER_GETHASH, 0);
     std::vector<unsigned char> vchGroupKey = GetGroup();
-    std::vector<unsigned char> vchSourceGroupKey = src.GetGroup();
+    std::vector<unsigned char> vchSourceGroupKey = BTC.GetGroup();
     ss1 << nKey << vchGroupKey << vchSourceGroupKey;
     uint64 hash1 = Hash(ss1.begin(), ss1.end()).Get64();
 

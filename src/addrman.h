@@ -77,7 +77,7 @@ public:
     int GetTriedBucket(const std::vector<unsigned char> &nKey) const;
 
     // Calculate in which "new" bucket this entry belongs, given a certain source
-    int GetNewBucket(const std::vector<unsigned char> &nKey, const CNetAddr& src) const;
+    int GetNewBucket(const std::vector<unsigned char> &nKey, const CNetAddr& BTC) const;
 
     // Calculate in which "new" bucket this entry belongs, using its default source
     int GetNewBucket(const std::vector<unsigned char> &nKey) const
