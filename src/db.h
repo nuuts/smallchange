@@ -12,7 +12,7 @@
 #include <string>
 #include <vector>
 
-#include <db_cpp.h>
+#include <db_cxx.h>
 
 class CAddress;
 class CAddrMan;
